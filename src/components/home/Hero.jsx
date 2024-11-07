@@ -4,7 +4,7 @@ const Hero = () => {
 	return (
 		<div className='bg-[url("/public/hero.png")] bg-cover bg-center  md:h-[720px] w-full'>
 			<div className='container'>
-				<div className='pt-[80px] sm:pt-[128px]'>
+				<div className='pt-[124px] md:pt-[192px]'>
 					<p className='mb-3 sm:mb-6 text-inter text-[14px] font-semibold sm:text-base uppercase leading-5 tracking-[3px] text-white'>
 						Posted on <span className='font-black'>startup</span>
 					</p>

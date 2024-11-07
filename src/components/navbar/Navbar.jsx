@@ -6,7 +6,7 @@ const Navbar = () => {
 	const [toogle, setToogle] = useState(false)
 
 	return (
-		<nav className='py-6 bg-[#232536] w-full'>
+		<nav className='py-6 bg-[#232536] w-full fixed top-0'>
 			<div className='container'>
 				<div className='flex items-center justify-between'>
 					<div className='logo'>
