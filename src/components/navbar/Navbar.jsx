@@ -12,6 +12,7 @@ const Navbar = () => {
 					<div className='logo'>
 						<Link to='/'>
 							<img
+								onClick={() => setToogle(false)}
 								className='w-[100px] md:w-[140px]'
 								src='/Logo.svg'
 								alt='logo'
