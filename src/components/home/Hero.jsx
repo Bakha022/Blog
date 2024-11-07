@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const Hero = () => {
 	return (
 		<div className='bg-[url("/public/hero.png")] bg-cover bg-center  md:h-[720px] w-full'>
@@ -19,7 +19,7 @@ const Hero = () => {
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 						cupidatat non proident.
 					</p>
-					<button className='mb-[100px] sm:mb-[192px] py-2 px-3 sm:py-4 sm:px-12 text-center bg-[#FFD050] text-sen font-bold text-[18px] leading-6'>
+					<button className='mb-[100px] sm:mb-[192px] py-2 px-3 sm:py-4 sm:px-12 text-center bg-[#FFD050] text-sen font-bold text-[18px] text-[#232536] leading-6'>
 						<Link to={''}>Read More > </Link>
 					</button>
 				</div>
