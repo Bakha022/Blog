@@ -1,0 +1,17 @@
+/* .menu-icon {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.nav-lists {
+		position: absolute;
+		top: 0;
+		right: 0;
+		flex-direction: column;
+		background-color: #232536;
+		padding: 20px;
+	}
+	.menu-icon {
+		display: block;
+	}
+} */
