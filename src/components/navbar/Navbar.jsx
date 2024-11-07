@@ -49,7 +49,7 @@ const Navbar = () => {
 							<Link
 								onClick={() => setToogle(false)}
 								className='font-normal text-sen text-white text-base leading-7 hover:text-gray-400'
-								to='/blog'
+								to='/blogs'
 							>
 								Blog
 							</Link>
@@ -72,15 +72,16 @@ const Navbar = () => {
 								Register
 							</Link>
 						</li>
-						<li className='w-[55px] rounded-sm p-0.5 text-center bg-white md:py-4 md:px-12 md:w-auto'>
-							<Link
-								onClick={() => setToogle(false)}
-								className='text-inter text-[#232536] font-bold'
-								to='/login'
-							>
+
+						<Link
+							onClick={() => setToogle(false)}
+							className='text-inter text-[#232536] font-bold'
+							to='/login'
+						>
+							<li className='w-[55px] rounded-sm p-0.5 text-center bg-white md:py-4 md:px-12 md:w-auto'>
 								Login
-							</Link>
-						</li>
+							</li>
+						</Link>
 					</ul>
 				</div>
 			</div>
