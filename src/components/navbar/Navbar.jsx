@@ -71,7 +71,7 @@ const Navbar = () => {
 								Register
 							</Link>
 						</li>
-						<li className='w-[80px] rounded-sm py-1 px-1 bg-white md:py-4 md:px-12 md:w-auto'>
+						<li className='w-[55px] rounded-sm p-0.5 text-center bg-white md:py-4 md:px-12 md:w-auto'>
 							<Link
 								onClick={() => setToogle(false)}
 								className='text-inter text-[#232536] font-bold'
