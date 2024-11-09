@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 	const [toogle, setToogle] = useState(false)
-
+	const handleLinkClick = () => {
+		setToogle(false)
+		window.scrollTo({ top: 0, behavior: 'smooth' })
+	}
 	return (
 		<nav className='py-6 bg-[#232536] w-full fixed top-0'>
 			<div className='container'>
@@ -12,7 +15,7 @@ const Navbar = () => {
 					<div className='logo'>
 						<Link to='/'>
 							<img
-								onClick={() => setToogle(false)}
+								onClick={handleLinkClick}
 								className='w-[100px] md:w-[140px]'
 								src='/Logo.svg'
 								alt='logo'
@@ -38,7 +41,7 @@ const Navbar = () => {
 					>
 						<li>
 							<Link
-								onClick={() => setToogle(false)}
+								onClick={handleLinkClick}
 								className='font-normal text-sen text-white text-base leading-7 hover:text-gray-400'
 								to='/'
 							>
@@ -47,7 +50,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<Link
-								onClick={() => setToogle(false)}
+								onClick={handleLinkClick}
 								className='font-normal text-sen text-white text-base leading-7 hover:text-gray-400'
 								to='/blogs'
 							>
@@ -56,7 +59,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<Link
-								onClick={() => setToogle(false)}
+								onClick={handleLinkClick}
 								className='font-normal text-sen text-white text-base leading-7 hover:text-gray-400'
 								to='/about'
 							>
@@ -65,7 +68,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<Link
-								onClick={() => setToogle(false)}
+								onClick={handleLinkClick}
 								className='font-normal text-sen text-white text-base leading-7 hover:text-gray-400'
 								to='/register'
 							>
@@ -74,7 +77,7 @@ const Navbar = () => {
 						</li>
 
 						<Link
-							onClick={() => setToogle(false)}
+							onClick={handleLinkClick}
 							className='text-inter text-[#232536] font-bold'
 							to='/login'
 						>

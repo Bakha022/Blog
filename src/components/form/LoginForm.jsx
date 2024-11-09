@@ -1,9 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import useAuth from '../../hooks/useAuth'
 import { loginSchemas } from '../../schemas/Login'
 
 const LoginForm = () => {
+	const { login, loading } = useAuth()
 	const {
 		register,
 		handleSubmit,
@@ -12,12 +14,11 @@ const LoginForm = () => {
 	} = useForm({ resolver: yupResolver(loginSchemas) })
 
 	const onSubmit = data => {
-		console.log(data)
-
-		reset({
-			username: '',
-			password: '',
-		})
+		login(data)
+		// reset({
+		// 	username: '',
+		// 	password: '',
+		// })
 	}
 
 	return (
@@ -49,10 +50,11 @@ const LoginForm = () => {
 					''
 				)}
 				<button
+					disabled={loading}
 					type='submit'
 					className='w-full bg-[#FFD050] text-center font-medium text-[#232536] p-4'
 				>
-					Login
+					{loading ? 'Loading ...' : 'Login'}
 				</button>
 			</form>
 		</div>

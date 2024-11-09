@@ -2,7 +2,7 @@ import React from 'react'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AdminLayout from './components/layout/AdminLayout'
-import PublicLayout from './components/layout/PublicLayout'
+import UserLayout from './components/layout/UserLayout'
 import DashboardPage from './pages/protected/admin/DashboardPage'
 import AboutPage from './pages/public/AboutPage'
 import BlogsPage from './pages/public/BlogsPage'
@@ -17,7 +17,7 @@ const App = () => {
 		<>
 			<BrowserRouter>
 				<Routes>
-					<Route element={<PublicLayout />}>
+					<Route element={<UserLayout />}>
 						<Route index element={<HomePage />} />
 						<Route path='/blogs' element={<BlogsPage />} />
 						<Route path='/category' element={<CategoryPage />} />
