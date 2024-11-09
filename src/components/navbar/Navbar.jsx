@@ -81,7 +81,7 @@ const Navbar = () => {
 							className='text-inter text-[#232536] font-bold'
 							to='/login'
 						>
-							<li className='w-[55px] rounded-sm p-0.5 text-center bg-white md:py-4 md:px-12 md:w-auto'>
+							<li className='w-[55px] rounded-sm p-0.5 text-center bg-white md:p-2 md:w-auto'>
 								Login
 							</li>
 						</Link>

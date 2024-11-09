@@ -26,12 +26,12 @@ const RegisterForm = () => {
 		<div className='flex justify-center items-start mb-[200px]'>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className='flex flex-col gap-5 w-[500px]'
+				className='flex flex-col gap-5 w-[440px]'
 			>
 				<input
 					{...register('first_name')}
 					placeholder='Firstname'
-					className='text-insert w-full p-3 sm:p-5 text-normal text-base border'
+					className='text-insert w-full p-3  text-normal text-base border'
 					type='text'
 				/>
 				{errors.first_name ? (
@@ -43,7 +43,7 @@ const RegisterForm = () => {
 				<input
 					{...register('last_name')}
 					placeholder='Lastname'
-					className='text-insert w-full p-3 sm:p-5 text-normal text-base border'
+					className='text-insert w-full p-3  text-normal text-base border'
 					type='text'
 				/>
 				{errors.last_name ? (
@@ -56,7 +56,7 @@ const RegisterForm = () => {
 				<input
 					{...register('username')}
 					placeholder='Username'
-					className='text-insert w-full p-3 sm:p-5 text-normal text-base border'
+					className='text-insert w-full p-3  text-normal text-base border'
 					type='text'
 				/>
 				{errors.username ? (
@@ -67,7 +67,7 @@ const RegisterForm = () => {
 				<input
 					{...register('password')}
 					placeholder='Password'
-					className='text-insert w-full p-3 sm:p-5 text-normal text-base border'
+					className='text-insert w-full p-3  text-normal text-base border'
 					type='password'
 				/>
 				{errors.password ? (
@@ -79,7 +79,7 @@ const RegisterForm = () => {
 				<input
 					{...register('confirm_password')}
 					placeholder='Confirm password'
-					className='text-insert w-full p-3 sm:p-5 text-normal text-base border'
+					className='text-insert w-full p-3  text-normal text-base border'
 					type='confirm_password'
 				/>
 				{errors.confirm_password ? (
@@ -92,7 +92,7 @@ const RegisterForm = () => {
 
 				<button
 					type='submit'
-					className='w-full bg-[#FFD050] text-center font-medium text-[#232536] p-3 sm:p-4'
+					className='w-full bg-[#FFD050] text-center font-medium text-[#232536] p-3'
 				>
 					Register
 				</button>

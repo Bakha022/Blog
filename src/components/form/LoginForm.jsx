@@ -25,12 +25,12 @@ const LoginForm = () => {
 		<div className='flex justify-center items-start mb-[200px]'>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className='flex flex-col gap-5 w-[500px]'
+				className='flex flex-col gap-5 w-[440px]'
 			>
 				<input
 					{...register('username')}
 					placeholder='Username'
-					className='text-insert w-full p-3 sm:p-5 text-normal text-base border'
+					className='text-insert w-full p-3 text-normal text-base border'
 					type='text'
 				/>
 				{errors.username ? (
@@ -41,7 +41,7 @@ const LoginForm = () => {
 				<input
 					{...register('password')}
 					placeholder='Password'
-					className='text-insert w-full p-3 sm:p-5 text-normal text-base border'
+					className='text-insert w-full p-3  text-normal text-base border'
 					type='password'
 				/>
 				{errors.password ? (
@@ -52,7 +52,7 @@ const LoginForm = () => {
 				<button
 					disabled={loading}
 					type='submit'
-					className='w-full bg-[#FFD050] text-center font-medium text-[#232536] p-4'
+					className='w-full bg-[#FFD050] text-center font-medium text-[#232536] p-3'
 				>
 					{loading ? 'Loading ...' : 'Login'}
 				</button>
