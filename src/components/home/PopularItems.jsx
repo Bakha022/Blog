@@ -6,7 +6,7 @@ const PopularItems = ({ img, person, date, title, describtion }) => {
 	return (
 		<div>
 			<LazyLoad height={200} offset={100}>
-				<img className='w-full' src={img} alt='card-img' />
+				<img className='w-full rounded-md' src={img} alt='card-img' />
 			</LazyLoad>
 			<div className='card-text mt-8 flex flex-col gap-4 justify-between'>
 				<p className='text-inter font-medium text-sm leading-5'>

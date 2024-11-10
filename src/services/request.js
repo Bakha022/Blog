@@ -1,4 +1,4 @@
-import {message} from 'antd'
+import { message } from 'antd'
 import axios from 'axios'
 
 const request = axios.create({
@@ -11,7 +11,9 @@ request.interceptors.response.use(
 		return response
 	},
 	function (error) {
-		message.error(error.response.data)
+		if (error.response && error.response.data) {
+			message.error(error.response.data)
+		}
 		return Promise.reject(error)
 	}
 )

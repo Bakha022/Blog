@@ -2,8 +2,10 @@ import React from 'react'
 
 const AccountPage = () => {
 	return (
-		<div>AccountPage</div>
+		<div>
+			Admin account
+		</div>
 	)
-}r
+}
 
 export default AccountPage

@@ -1,8 +1,11 @@
 import React from 'react'
+import AccountForm from '../../../components/form/AccountForm'
 
 const AccountPage = () => {
 	return (
-		<div>AccountPage</div>
+		<div>
+			<AccountForm />
+		</div>
 	)
 }
 

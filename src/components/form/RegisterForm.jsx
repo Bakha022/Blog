@@ -14,13 +14,13 @@ const RegisterForm = () => {
 	const onSubmit = data => {
 		console.log(data)
 
-		reset({
-			first_name: '',
-			last_name: '',
-			username: '',
-			password: '',
-			confirm_password: '',
-		})
+		// reset({
+		// 	first_name: '',
+		// 	last_name: '',
+		// 	username: '',
+		// 	password: '',
+		// 	confirm_password: '',
+		// })
 	}
 	return (
 		<div className='flex justify-center items-start mb-[200px]'>
@@ -31,7 +31,7 @@ const RegisterForm = () => {
 				<input
 					{...register('first_name')}
 					placeholder='Firstname'
-					className='text-insert w-full p-3  text-normal text-base border'
+					className='text-insert w-full p-3  rounded-md text-normal text-base border'
 					type='text'
 				/>
 				{errors.first_name ? (
@@ -43,7 +43,7 @@ const RegisterForm = () => {
 				<input
 					{...register('last_name')}
 					placeholder='Lastname'
-					className='text-insert w-full p-3  text-normal text-base border'
+					className='text-insert w-full p-3  rounded-md text-normal text-base border'
 					type='text'
 				/>
 				{errors.last_name ? (
@@ -56,7 +56,7 @@ const RegisterForm = () => {
 				<input
 					{...register('username')}
 					placeholder='Username'
-					className='text-insert w-full p-3  text-normal text-base border'
+					className='text-insert w-full p-3  rounded-md text-normal text-base border'
 					type='text'
 				/>
 				{errors.username ? (
@@ -67,7 +67,7 @@ const RegisterForm = () => {
 				<input
 					{...register('password')}
 					placeholder='Password'
-					className='text-insert w-full p-3  text-normal text-base border'
+					className='text-insert w-full p-3  rounded-md text-normal text-base border'
 					type='password'
 				/>
 				{errors.password ? (
@@ -79,7 +79,7 @@ const RegisterForm = () => {
 				<input
 					{...register('confirm_password')}
 					placeholder='Confirm password'
-					className='text-insert w-full p-3  text-normal text-base border'
+					className='text-insert w-full p-3  rounded-md text-normal text-base border'
 					type='confirm_password'
 				/>
 				{errors.confirm_password ? (
@@ -92,7 +92,7 @@ const RegisterForm = () => {
 
 				<button
 					type='submit'
-					className='w-full bg-[#FFD050] text-center font-medium text-[#232536] p-3'
+					className='w-full bg-[#FFD050] text-center rounded-md font-medium text-[#232536] p-3'
 				>
 					Register
 				</button>

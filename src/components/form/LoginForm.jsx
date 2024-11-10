@@ -1,10 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
 import { loginSchemas } from '../../schemas/Login'
 
 const LoginForm = () => {
+	const navigate = useNavigate()
 	const { login, loading } = useAuth()
 	const {
 		register,
@@ -14,11 +16,14 @@ const LoginForm = () => {
 	} = useForm({ resolver: yupResolver(loginSchemas) })
 
 	const onSubmit = data => {
-		login(data)
-		// reset({
-		// 	username: '',
-		// 	password: '',
-		// })
+		login(data, navigate)
+
+		// user
+		// 	? reset({
+		// 			username: '',
+		// 			password: '',
+		// 	  })
+		// 	: null
 	}
 
 	return (
@@ -30,7 +35,7 @@ const LoginForm = () => {
 				<input
 					{...register('username')}
 					placeholder='Username'
-					className='text-insert w-full p-3 text-normal text-base border'
+					className='text-insert w-full p-3 rounded-md text-normal text-base border'
 					type='text'
 				/>
 				{errors.username ? (
@@ -41,7 +46,7 @@ const LoginForm = () => {
 				<input
 					{...register('password')}
 					placeholder='Password'
-					className='text-insert w-full p-3  text-normal text-base border'
+					className='text-insert w-full p-3 rounded-md  text-normal text-base border'
 					type='password'
 				/>
 				{errors.password ? (
@@ -52,7 +57,7 @@ const LoginForm = () => {
 				<button
 					disabled={loading}
 					type='submit'
-					className='w-full bg-[#FFD050] text-center font-medium text-[#232536] p-3'
+					className='w-full bg-[#FFD050] text-center rounded-md font-medium text-[#232536] p-3'
 				>
 					{loading ? 'Loading ...' : 'Login'}
 				</button>

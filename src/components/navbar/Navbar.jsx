@@ -1,9 +1,14 @@
 import { CloseOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import React, { useState } from 'react'
+import { FaUserGraduate } from 'react-icons/fa'
+import { IoIosLogOut } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import useAuth from '../../hooks/useAuth'
 
 const Navbar = () => {
 	const [toogle, setToogle] = useState(false)
+	const { user } = useAuth()
+
 	const handleLinkClick = () => {
 		setToogle(false)
 		window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -13,14 +18,24 @@ const Navbar = () => {
 			<div className='container'>
 				<div className='flex items-center justify-between'>
 					<div className='logo'>
-						<Link to='/'>
-							<img
-								onClick={handleLinkClick}
-								className='w-[100px] md:w-[140px]'
-								src='/Logo.svg'
-								alt='logo'
-							/>
-						</Link>
+						{user && user.role === 'user' ? (
+							<Link
+								to={'/myblogs'}
+								className='font-normal text-sen text-white text-2xl leading-7 hover:text-gray-400'
+							>
+								My Blogs
+							</Link>
+						) : (
+							<Link to='/'>
+								<img
+									onClick={handleLinkClick}
+									className='w-[100px] md:w-[140px]'
+									src='/Logo.svg'
+									alt='logo'
+								/>
+								)
+							</Link>
+						)}
 					</div>
 					<div className='toogle'>
 						<MenuUnfoldOutlined
@@ -75,16 +90,38 @@ const Navbar = () => {
 								Register
 							</Link>
 						</li>
-
-						<Link
-							onClick={handleLinkClick}
-							className='text-inter text-[#232536] font-bold'
-							to='/login'
-						>
-							<li className='w-[55px] rounded-sm p-0.5 text-center bg-white md:p-2 md:w-auto'>
-								Login
-							</li>
-						</Link>
+						{user && user.role === 'user' ? (
+							<div className='flex gap-4'>
+								<li>
+									<Link
+										onClick={handleLinkClick}
+										className='font-normal text-sen text-white text-2xl leading-7 hover:text-gray-400'
+										to='/account-page'
+									>
+										<FaUserGraduate />
+									</Link>
+								</li>
+								<li>
+									<Link
+										onClick={handleLinkClick}
+										className='font-normal text-sen text-white text-2xl leading-7 hover:text-red-500'
+										// to=''
+									>
+										<IoIosLogOut />
+									</Link>
+								</li>
+							</div>
+						) : (
+							<Link
+								onClick={handleLinkClick}
+								className='text-inter text-[#232536] font-bold'
+								to='/login'
+							>
+								<li className='w-[55px] rounded-sm p-0.5 text-center bg-white md:p-2 md:w-auto'>
+									Login
+								</li>
+							</Link>
+						)}
 					</ul>
 				</div>
 			</div>
