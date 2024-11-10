@@ -13,6 +13,12 @@ const Navbar = () => {
 		setToogle(false)
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
+
+	// const handleLogOut = () => {
+	// 	localStorage.removeItem(USER)
+	// 	Cookies.remove(TOKEN)
+	// 	setToogle(false)
+	// }
 	return (
 		<nav className='py-6 bg-[#232536] w-full fixed top-0'>
 			<div className='container'>
@@ -103,9 +109,10 @@ const Navbar = () => {
 								</li>
 								<li>
 									<Link
+										// onClick={handleLogOut}
 										onClick={handleLinkClick}
 										className='font-normal text-sen text-white text-2xl leading-7 hover:text-red-500'
-										// to=''
+										to='/'
 									>
 										<IoIosLogOut />
 									</Link>
