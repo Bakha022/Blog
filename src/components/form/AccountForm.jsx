@@ -12,7 +12,7 @@ const AccountForm = () => {
 								src='/myself.jpg'
 								alt=''
 							/>
-							<div className='flex flex-wrap gap-5'>
+							<div className='flex flex-wrap gap-3 sm:gap-5'>
 								<button className='flex gap-1 items-center border py-0.5 px-1 sm:px-2 sm:py-1 rounded-md font-normal text-sen text-[14px] sm:text-base leading-7 text-blue-600 border-blue-600 hover:text-blue-700'>
 									<FiUpload />
 									Upload
