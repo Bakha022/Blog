@@ -3,7 +3,6 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AdminLayout from './components/layout/AdminLayout'
 import UserLayout from './components/layout/UserLayout'
-import useAuth from './hooks/useAuth'
 import DashboardPage from './pages/protected/admin/DashboardPage'
 import AccountPage from './pages/protected/user/AccountPage'
 import MyBlogsPage from './pages/protected/user/MyBlogsPage'
@@ -16,10 +15,11 @@ import NotFoundPage from './pages/public/NotFoundPage'
 import RegisterPage from './pages/public/RegisterPage'
 
 const App = () => {
-	const {
-		user: { role },
-	} = useAuth()
-	
+	// const {
+	// 	user: { role },
+	// } = useAuth()
+
+	let role = 'user'
 	return (
 		<>
 			<BrowserRouter>

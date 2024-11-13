@@ -1,12 +1,14 @@
 import { CloseOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import React, { useState } from 'react'
-import { FaUserGraduate } from 'react-icons/fa'
-import { IoIosLogOut } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import { FaSignOutAlt, FaUserGraduate } from 'react-icons/fa'
+import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
 
 const Navbar = () => {
 	const [toogle, setToogle] = useState(false)
+	const navigate = useNavigate()
+	const { setUser } = useAuth()
+
 	const { user } = useAuth()
 
 	const handleLinkClick = () => {
@@ -15,9 +17,9 @@ const Navbar = () => {
 	}
 
 	// const handleLogOut = () => {
-	// 	localStorage.removeItem(USER)
-	// 	Cookies.remove(TOKEN)
+	// 	setUser(null)
 	// 	setToogle(false)
+	// 	navigate('/')
 	// }
 	return (
 		<nav className='py-6 bg-[#232536] w-full fixed top-0'>
@@ -110,11 +112,10 @@ const Navbar = () => {
 								<li>
 									<Link
 										// onClick={handleLogOut}
-										onClick={handleLinkClick}
 										className='font-normal text-sen text-white text-2xl leading-7 hover:text-red-500'
 										to='/'
 									>
-										<IoIosLogOut />
+										<FaSignOutAlt />
 									</Link>
 								</li>
 							</div>

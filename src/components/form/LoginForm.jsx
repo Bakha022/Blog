@@ -11,19 +11,11 @@ const LoginForm = () => {
 	const {
 		register,
 		handleSubmit,
-		reset,
 		formState: { errors },
 	} = useForm({ resolver: yupResolver(loginSchemas) })
 
 	const onSubmit = data => {
 		login(data, navigate)
-
-		// user
-		// 	? reset({
-		// 			username: '',
-		// 			password: '',
-		// 	  })
-		// 	: null
 	}
 
 	return (

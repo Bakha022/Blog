@@ -1,10 +1,23 @@
 import { message } from 'antd'
 import axios from 'axios'
+import Cookies from 'js-cookie'
+import { __END_POINT, TOKEN } from '../utils'
 
 const request = axios.create({
-	baseURL: 'https://ap-blog-backend.up.railway.app/api/v1',
+	baseURL: __END_POINT,
 	timeout: 9000,
 })
+
+request.interceptors.request.use(
+	function (response) {
+		const token = Cookies.get(TOKEN)
+		response.headers.Authorization = `Bearer ${token}`
+		return response
+	},
+	function (error) {
+		return Promise.reject(error)
+	}
+)
 
 request.interceptors.response.use(
 	function (response) {
