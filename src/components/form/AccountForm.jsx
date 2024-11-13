@@ -29,7 +29,6 @@ const AccountForm = () => {
 
 	const handleUploadImg = async e => {
 		let formData = new FormData()
-
 		formData.append('file', e.target.files[0])
 		const { data } = await request.post('auth/upload', formData)
 		setUploadImg(data)

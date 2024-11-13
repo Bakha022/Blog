@@ -1,8 +1,10 @@
 import { CloseOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
+import Cookies from 'js-cookie'
 import React, { useState } from 'react'
 import { FaSignOutAlt, FaUserGraduate } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
+import { TOKEN, USER } from '../../utils'
 
 const Navbar = () => {
 	const [toogle, setToogle] = useState(false)
@@ -16,11 +18,14 @@ const Navbar = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 
-	// const handleLogOut = () => {
-	// 	setUser(null)
-	// 	setToogle(false)
-	// 	navigate('/')
-	// }
+	const handleLogOut = () => {
+		setUser(null)
+		setToogle(false)
+
+		localStorage.removeItem(USER)
+		Cookies.remove(TOKEN)
+		navigate('/')
+	}
 	return (
 		<nav className='py-6 bg-[#232536] w-full fixed top-0'>
 			<div className='container'>
@@ -111,7 +116,7 @@ const Navbar = () => {
 								</li>
 								<li>
 									<Link
-										// onClick={handleLogOut}
+										onClick={handleLogOut}
 										className='font-normal text-sen text-white text-2xl leading-7 hover:text-red-500'
 										to='/'
 									>
