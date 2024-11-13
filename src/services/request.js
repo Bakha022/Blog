@@ -5,7 +5,7 @@ import { __END_POINT, TOKEN } from '../utils'
 
 const request = axios.create({
 	baseURL: __END_POINT,
-	timeout: 9000,
+	timeout: 10000,
 })
 
 request.interceptors.request.use(

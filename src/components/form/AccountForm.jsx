@@ -261,7 +261,7 @@ const AccountForm = () => {
 								{btnLoading ? (
 									<div className='flex items-center justify-center gap-3 text-black'>
 										Loading...{' '}
-										<Loading widht={'20px'} height={'20px'} size={'5px'} />
+										<Loading widht={'15px'} height={'15px'} size={'5px'} />
 									</div>
 								) : (
 									'Save Change'
