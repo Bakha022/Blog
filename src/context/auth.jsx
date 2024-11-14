@@ -45,17 +45,16 @@ const AuthProvider = ({ children }) => {
 				} = await request.post('auth/register', values)
 
 				Cookies.set(TOKEN, token)
-				// request.defaults.headers.common.Authorization = `Bearer ${token}`
+				request.defaults.headers.common.Authorization = `Bearer ${token}`
 
 				const { data: user } = await request.get('auth/me')
-				
+
 				localStorage.setItem(USER, JSON.stringify(user))
 				setUser(user)
 				message.success('Success')
 
 				const { role } = user
-				console.log(role);
-				
+
 				if (role == 'user') {
 					navigate('/myblogs')
 				} else if (role === 'admin') {

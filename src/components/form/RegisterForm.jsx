@@ -1,12 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
 import { registerSchema } from '../../schemas/Register'
-import { useNavigate } from 'react-router-dom'
+import Loading from '../loading/Loading'
 
 const RegisterForm = () => {
-	const { registered } = useAuth()
+	const { registered, loading } = useAuth()
 	const navigate = useNavigate()
 	const {
 		register,
@@ -88,9 +89,9 @@ const RegisterForm = () => {
 
 				<button
 					type='submit'
-					className='w-full bg-[#FFD050] text-center rounded-md font-medium text-[#232536] p-3'
+					className='w-full bg-[#FFD050] text-center flex gap-2 items-center justify-center rounded-md font-medium text-[#232536] p-3'
 				>
-					Register
+					Register {loading ? <Loading widht={'15px'} height={'15px'} size={'5px'} /> : null}
 				</button>
 			</form>
 		</div>
