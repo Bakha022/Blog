@@ -1,9 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import useAuth from '../../hooks/useAuth'
 import { registerSchema } from '../../schemas/Register'
+import { useNavigate } from 'react-router-dom'
 
 const RegisterForm = () => {
+	const { registered } = useAuth()
+	const navigate = useNavigate()
 	const {
 		register,
 		handleSubmit,
@@ -12,15 +16,7 @@ const RegisterForm = () => {
 	} = useForm({ resolver: yupResolver(registerSchema) })
 
 	const onSubmit = data => {
-		console.log(data)
-
-		// reset({
-		// 	first_name: '',
-		// 	last_name: '',
-		// 	username: '',
-		// 	password: '',
-		// 	confirm_password: '',
-		// })
+		registered(data, navigate)
 	}
 	return (
 		<div className='flex justify-center items-start mb-[200px]'>
@@ -80,7 +76,7 @@ const RegisterForm = () => {
 					{...register('confirm_password')}
 					placeholder='Confirm password'
 					className='text-insert w-full p-3  rounded-md text-normal text-base border'
-					type='confirm_password'
+					type='password'
 				/>
 				{errors.confirm_password ? (
 					<p className='text-red-500 text-set'>

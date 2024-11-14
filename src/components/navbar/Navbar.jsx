@@ -34,7 +34,7 @@ const Navbar = () => {
 						{user && user.role === 'user' ? (
 							<Link
 								to={'/myblogs'}
-								className='font-normal text-sen text-white text-2xl leading-7 hover:text-gray-400'
+								className='font-normal text-sen text-[#FFD050] text-2xl leading-7 hover:text-gray-400'
 							>
 								My Blogs
 							</Link>
@@ -46,7 +46,6 @@ const Navbar = () => {
 									src='/Logo.svg'
 									alt='logo'
 								/>
-								)
 							</Link>
 						)}
 					</div>

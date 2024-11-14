@@ -18,7 +18,6 @@ const AuthProvider = ({ children }) => {
 			} = await request.post('auth/login', values)
 
 			Cookies.set(TOKEN, token)
-			request.defaults.headers.common.Authorization = `Bearer ${token}`
 
 			const { data: user } = await request.get('auth/me')
 			localStorage.setItem(USER, JSON.stringify(user))
@@ -37,7 +36,40 @@ const AuthProvider = ({ children }) => {
 		}
 	}
 
-	const state = { user, loading, login, setUser }
+	const registered = async (values, navigate) => {
+		if (values.password == values.confirm_password) {
+			try {
+				setLoading(true)
+				const {
+					data: { token },
+				} = await request.post('auth/register', values)
+
+				Cookies.set(TOKEN, token)
+				// request.defaults.headers.common.Authorization = `Bearer ${token}`
+
+				const { data: user } = await request.get('auth/me')
+				
+				localStorage.setItem(USER, JSON.stringify(user))
+				setUser(user)
+				message.success('Success')
+
+				const { role } = user
+				console.log(role);
+				
+				if (role == 'user') {
+					navigate('/myblogs')
+				} else if (role === 'admin') {
+					navigate('/dashboard')
+				}
+			} finally {
+				setLoading(false)
+			}
+		} else {
+			message.error('The confirmation password is incorrect')
+		}
+	}
+
+	const state = { user, loading, login, registered, setUser }
 	return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>
 }
 
