@@ -88,10 +88,15 @@ const RegisterForm = () => {
 				)}
 
 				<button
+					disabled={loading}
 					type='submit'
-					className='w-full bg-[#FFD050] text-center flex gap-2 items-center justify-center rounded-md font-medium text-[#232536] p-3'
+					className='w-full bg-[#FFD050] text-center flex gap-2 items-center justify-center rounded-md font-medium text-[#232536] p-3
+					disabled:bg-[#ffd0507a] disabled:cursor-not-allowed'
 				>
-					Register {loading ? <Loading widht={'15px'} height={'15px'} size={'5px'} /> : null}
+					Register{' '}
+					{loading ? (
+						<Loading widht={'15px'} height={'15px'} size={'5px'} />
+					) : null}
 				</button>
 			</form>
 		</div>
