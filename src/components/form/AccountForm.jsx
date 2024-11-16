@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { FaTrash } from 'react-icons/fa6'
 import request from '../../services/request'
 import { __UPLOAD_IMG } from '../../utils'
-import Loading from '../loading/Loading'
 
 import { FaCloudUploadAlt } from 'react-icons/fa'
 const AccountForm = () => {
@@ -260,8 +259,7 @@ const AccountForm = () => {
 							>
 								{btnLoading ? (
 									<div className='flex items-center justify-center gap-3 text-black'>
-										Loading...{' '}
-										<Loading widht={'15px'} height={'15px'} size={'5px'} />
+										Loading...
 									</div>
 								) : (
 									'Save Change'

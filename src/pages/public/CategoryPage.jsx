@@ -1,8 +1,11 @@
 import React from 'react'
+import CategoryHero from '../../components/category/CategoryHero'
 
 const CagegoryPage = () => {
 	return (
-		<div>CagegoryPage</div>
+		<>
+			<CategoryHero />
+		</>
 	)
 }
 

@@ -27,7 +27,7 @@ const Navbar = () => {
 		navigate('/')
 	}
 	return (
-		<nav className='py-6 bg-[#232536] w-full fixed top-0'>
+		<nav className='py-6 bg-[#232536] w-full fixed top-0 z-30'>
 			<div className='container'>
 				<div className='flex items-center justify-between'>
 					<div className='logo'>
@@ -84,6 +84,7 @@ const Navbar = () => {
 								Blog
 							</Link>
 						</li>
+						
 						<li>
 							<Link
 								onClick={handleLinkClick}

@@ -2,11 +2,16 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import AuthProvider from './context/auth.jsx'
+import DateProvider from './context/date.jsx'
+
 import './index.css'
+
 createRoot(document.getElementById('root')).render(
-	<AuthProvider>
-		<StrictMode>
-			<App />
-		</StrictMode>
-	</AuthProvider>
+	<DateProvider>
+		<AuthProvider>
+			<StrictMode>
+				<App />
+			</StrictMode>
+		</AuthProvider>
+	</DateProvider>
 )

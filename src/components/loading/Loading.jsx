@@ -4,7 +4,8 @@ import { OrbitProgress } from 'react-loading-indicators'
 const Loading = ({ widht, height, size }) => {
 	return (
 		<div
-			className={`w-[${widht}] h-${height} flex items-center justify-center`}
+			style={{ height: '100vh' }}
+			className={`w-[${widht}] h-[${height}] flex items-center justify-center`}
 		>
 			<OrbitProgress
 				variant='dotted'

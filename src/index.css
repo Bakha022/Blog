@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
 	margin: 0;
 	padding: 0;
@@ -14,4 +13,28 @@
 	margin-right: auto;
 	padding-left: 40px;
 	padding-right: 40px;
+}
+
+@media screen and (max-width: 768px) {
+	.swiper-slide {
+		width: 100% !important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.mySwiper {
+		height: 750px !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.mySwiper {
+		height: 580px !important;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.mySwiper {
+		height: 680px !important;
+	}
 }

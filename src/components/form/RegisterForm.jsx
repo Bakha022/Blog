@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
 import { registerSchema } from '../../schemas/Register'
-import Loading from '../loading/Loading'
 
 const RegisterForm = () => {
 	const { registered, loading } = useAuth()
@@ -93,10 +92,7 @@ const RegisterForm = () => {
 					className='w-full bg-[#FFD050] text-center flex gap-2 items-center justify-center rounded-md font-medium text-[#232536] p-3
 					disabled:bg-[#ffd0507a] disabled:cursor-not-allowed'
 				>
-					Register{' '}
-					{loading ? (
-						<Loading widht={'15px'} height={'15px'} size={'5px'} />
-					) : null}
+					{loading ? 'Loading...' : "Register"}
 				</button>
 			</form>
 		</div>
