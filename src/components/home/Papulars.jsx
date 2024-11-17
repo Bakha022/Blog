@@ -12,7 +12,6 @@ import PopularItems from './PopularItems'
 
 const Papulars = () => {
 	const { data } = useData('post/lastones')
-
 	return (
 		<div className='container pb-[66px] mt-[60px] sm:mt-[70px] md:mt-[94px]'>
 			<Title title={'Popular blogs'} />

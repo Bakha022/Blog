@@ -16,6 +16,7 @@ const Hero = () => {
 	if (loading) {
 		return <Loading widht='100%' size={'12px'} height='100vh' />
 	}
+
 	return (
 		<div className='bg-[url("/public/hero.png")] bg-cover bg-center  md:h-[720px] w-full'>
 			<div className='container'>
@@ -40,6 +41,12 @@ const Hero = () => {
 						<Link to={'/'}>Read More {'>'} </Link>
 					</button>
 				</div>
+				{/* <img
+					src={`${__UPLOAD_IMG}${data?.photo._id}.${
+						data?.photo.name.split('.')[1]
+					}`}
+					alt=''
+				/> */}
 			</div>
 		</div>
 	)
