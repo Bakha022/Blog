@@ -3,15 +3,18 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import AuthProvider from './context/auth.jsx'
 import DateProvider from './context/date.jsx'
+import  SearchingProvider from './context/searching'
 
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
-	<DateProvider>
-		<AuthProvider>
-			<StrictMode>
-				<App />
-			</StrictMode>
-		</AuthProvider>
-	</DateProvider>
+	<SearchingProvider>
+		<DateProvider>
+			<AuthProvider>
+				<StrictMode>
+					<App />
+				</StrictMode>
+			</AuthProvider>
+		</DateProvider>
+	</SearchingProvider>
 )

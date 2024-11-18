@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import { FaArrowRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { DateContext } from '../../context/date'
 import useData from '../../hooks/useData'
@@ -37,8 +38,14 @@ const Hero = () => {
 					<p className='text-inter font-normal leading-7 text-base text-white mb-12 md:w-[599px]'>
 						{data?.category.description}
 					</p>
-					<button className='mb-[100px] sm:mb-[192px] py-2 px-3 sm:py-4 sm:px-12 text-center bg-[#FFD050]  rounded-md text-sen font-bold text-[18px] text-[#232536] leading-6'>
-						<Link to={'/'}>Read More {'>'} </Link>
+					<button className='mb-[100px] sm:mb-[192px] text-center bg-[#FFD050]  rounded-md text-sen font-bold text-[18px] text-[#232536] leading-6'>
+						<Link
+							className='flex gap-2 items-center  py-2 px-3 sm:py-4 sm:px-12'
+							to={`/blog/${2}`}
+						>
+							{' '}
+							Read More <FaArrowRight />{' '}
+						</Link>
 					</button>
 				</div>
 				{/* <img

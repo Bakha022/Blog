@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { __UPLOAD_IMG } from '../../utils'
 
-const PostItem = ({ category, description, title, photo }) => {
+const PostItem = ({ category, description, title, photo, _id }) => {
 	return (
 		<>
 			<div className='flex flex-col gap-[35px]  custom:flex-row mb-[64px]'>
@@ -21,8 +21,8 @@ const PostItem = ({ category, description, title, photo }) => {
 					<p className='text-inter font-normal text-base leading-7 text-[#6D6E76]'>
 						{description}
 						<Link
-							to='/'
-							className='flex gap-2 items-center text-[#592EA9] py-1 px-2 border w-[120px] rounded-xl mt-5'
+							to={`/blog/${_id}`}
+							className='flex gap-2 items-center text-[#232536] py-1 px-2  w-[118px] rounded-xl mt-5 bg-[#FFD050]'
 						>
 							Read More <FaArrowRight />
 						</Link>

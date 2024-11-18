@@ -8,6 +8,7 @@ import DashboardPage from './pages/protected/admin/DashboardPage'
 import AccountPage from './pages/protected/user/AccountPage'
 import MyBlogsPage from './pages/protected/user/MyBlogsPage'
 import AboutPage from './pages/public/AboutPage'
+import BlogPage from './pages/public/BlogPage'
 import BlogsPage from './pages/public/BlogsPage'
 import CategoryPage from './pages/public/CategoryPage'
 import HomePage from './pages/public/HomePage'
@@ -16,9 +17,7 @@ import NotFoundPage from './pages/public/NotFoundPage'
 import RegisterPage from './pages/public/RegisterPage'
 
 const App = () => {
-	const {
-		user
-	} = useAuth()
+	const { user } = useAuth()
 
 	return (
 		<>
@@ -27,7 +26,9 @@ const App = () => {
 					<Route element={<UserLayout />}>
 						<Route index element={<HomePage />} />
 						<Route path='/blogs' element={<BlogsPage />} />
-						<Route path='/category' element={<CategoryPage />} />
+						<Route path='/category/:id' element={<CategoryPage />} />
+						<Route path='/blog/:id' element={<BlogPage />} />
+
 						<Route path='/login' element={<LoginPage />} />
 						<Route path='/about' element={<AboutPage />} />
 						<Route path='/register' element={<RegisterPage />} />
