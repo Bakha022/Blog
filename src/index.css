@@ -38,3 +38,10 @@
 		height: 680px !important;
 	}
 }
+
+.category-subtitle {
+	display: -webkit-box;
+	-webkit-line-clamp: 4; /* 4 qatorni ko'rsatish */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

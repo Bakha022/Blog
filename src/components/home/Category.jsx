@@ -6,7 +6,7 @@ import CategoryItem from './CategoryItem.jsx'
 const Category = () => {
 	
 
-	const { data } = useData('category?limit=4')
+	const { data } = useData('category')
 
 	const categoryData = data?.data
 

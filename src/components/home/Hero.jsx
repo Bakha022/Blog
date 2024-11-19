@@ -41,7 +41,7 @@ const Hero = () => {
 					<button className='mb-[100px] sm:mb-[192px] text-center bg-[#FFD050]  rounded-md text-sen font-bold text-[18px] text-[#232536] leading-6'>
 						<Link
 							className='flex gap-2 items-center  py-2 px-3 sm:py-4 sm:px-12'
-							to={`/blog/${2}`}
+							to={`/blog/${data?._id}`}
 						>
 							{' '}
 							Read More <FaArrowRight />{' '}

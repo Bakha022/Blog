@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AdminLayout from './components/layout/AdminLayout'
 import UserLayout from './components/layout/UserLayout'
 import useAuth from './hooks/useAuth'
@@ -33,12 +33,37 @@ const App = () => {
 						<Route path='/about' element={<AboutPage />} />
 						<Route path='/register' element={<RegisterPage />} />
 
-						{user?.role === 'user' && (
+						{/* {user?.role === 'user' && (
 							<>
 								<Route path='/myblogs' element={<MyBlogsPage />} />
 								<Route path='/account-page' element={<AccountPage />} />
 							</>
-						)}
+						)} */}
+
+						{
+							<>
+								<Route
+									path='/myblogs'
+									element={
+										user?.role === 'user' ? (
+											<MyBlogsPage />
+										) : (
+											<Navigate to='/login' />
+										)
+									}
+								/>
+								<Route
+									path='/account-page'
+									element={
+										user?.role === 'user' ? (
+											<AccountPage />
+										) : (
+											<Navigate to='/login' />
+										)
+									}
+								/>
+							</>
+						}
 					</Route>
 
 					{user?.role === 'admin' && (

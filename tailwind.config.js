@@ -9,7 +9,7 @@ export default {
 			},
 			screens: {
 				custom: '850px',
-				screen_bnt: '407px'
+				screen_bnt: '407px',
 			},
 		},
 	},
