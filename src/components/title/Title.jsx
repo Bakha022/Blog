@@ -7,7 +7,7 @@ const Title = ({ title, center, margin_y }) => {
 				margin_y ? `mb-[${margin_y}]` : 'sm:mb-[64px] '
 			}`}
 		>
-			{title}
+			{title ? title : ''}
 		</h1>
 	)
 }

@@ -32,7 +32,11 @@ const PopularItems = ({ title, category, user, photo, description, _id }) => {
 			<div className='card-text mt-8 flex flex-col gap-4 justify-between'>
 				<p className='text-inter font-medium text-sm leading-5'>
 					By{' '}
-					<Link to={`/blog/${_id}`} className='text-blue-600'>
+					<Link
+						onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+						to={`/blog/${_id}`}
+						className='text-blue-600'
+					>
 						{user.first_name} {user.last_name}{' '}
 					</Link>{' '}
 					l {month} {blogDay}, {blogYear}
@@ -40,7 +44,7 @@ const PopularItems = ({ title, category, user, photo, description, _id }) => {
 				<h2 className='text-sen font-bold text-[22px] md:text-[24px] custom:text-[28px] md:leading-10 tracking-[-1px]'>
 					{title}
 				</h2>
-				<p className='text-inter text-base leading-7 text-[#232536]'>
+				<p className='text-inter text-base leading-7 category-subtitle text-[#232536]'>
 					{description}
 				</p>
 			</div>

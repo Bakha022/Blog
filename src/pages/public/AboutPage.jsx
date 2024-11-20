@@ -24,6 +24,7 @@ const AboutPage = () => {
 			'shapes w-[70px] h-[70px] bg-[#592EA9] rounded-[50px] absolute bottom-[-35px] left-[20%]',
 		img: '/friends.png',
 	}
+
 	return (
 		<div className='container mt-[88px] pt-[44px] sm:pt-[64px]'>
 			<AboutHero />

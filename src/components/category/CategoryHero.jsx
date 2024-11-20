@@ -9,7 +9,7 @@ const CategoryHero = ({ id }) => {
 	return (
 		<div className='bg-[#F4F0F8] py-[50px]'>
 			<div className='container text-center'>
-				<Title margin_y={'1px'} title={`${data?.name}`} />
+				<Title margin_y={'1px'} title={`${data ? data?.name : ''}`} />
 				<p className='text-[#6D6E76]  custom:w-[515px]  mb-6 mx-auto text-inter font-normal text-base leading-7'>
 					{data?.description}
 				</p>
