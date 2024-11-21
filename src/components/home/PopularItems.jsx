@@ -20,7 +20,7 @@ const PopularItems = ({ title, category, user, photo, description, _id }) => {
 		<div className='select-none mr-8'>
 			<LazyLoad height={200} offset={100}>
 				<img
-					className='w-full rounded-md'
+					className='w-full rounded-md object-cover h-[450px] custom:h-[250px]'
 					src={`${__UPLOAD_IMG}${photo?._id}.${photo?.name.split('.')[1]}`}
 					alt='card-img'
 					onError={e => {

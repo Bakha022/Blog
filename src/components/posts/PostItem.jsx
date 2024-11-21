@@ -28,6 +28,7 @@ const PostItem = ({ category, description, title, photo, _id }) => {
 						{description}
 					</p>
 					<Link
+						onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 						to={`/blog/${_id}`}
 						className='flex gap-2 items-center text-[#232536] py-1 px-2  w-[118px] rounded-xl mt-5 bg-[#FFD050]'
 					>
