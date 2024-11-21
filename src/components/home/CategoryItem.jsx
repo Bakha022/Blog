@@ -5,11 +5,11 @@ import Title from '../title/Title'
 
 const CategoryItem = ({ photo, description, name, _id }) => {
 	return (
-		<div className='p-[30px] border rounded-md hover:bg-[#FFD050] h-[312px]  hover:cursor-pointer hover:transition transition flex flex-col justify-between'>
-			<Link
-				onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-				to={_id ? `/category/${_id}` : ''}
-			>
+		<div
+			onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+			className='p-[30px] border rounded-md hover:bg-[#FFD050] h-[312px]  hover:cursor-pointer hover:transition transition flex flex-col justify-between'
+		>
+			<Link to={_id ? `/category/${_id}` : ''}>
 				<div className='bg-white w-[48px] sm:w-[60px] p-3 rounded-lg mb-[3px]'>
 					<img
 						width={'100%'}

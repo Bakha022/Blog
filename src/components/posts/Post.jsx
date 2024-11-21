@@ -9,7 +9,7 @@ import demoImage from '/postImg.png'
 const Post = ({ category, user, description, title, tags, photo, _id }) => {
 	const { dateConvertion, blogYear, blogDay, month } = useContext(DateContext)
 
-	// console.log(user?.photo)
+
 
 	useEffect(() => {
 		if (category?.createdAt) {

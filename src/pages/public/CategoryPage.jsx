@@ -25,7 +25,7 @@ const CagegoryPage = () => {
 		category: id,
 	})
 	return (
-		<div className='mt-[90px]'>
+		<div className='mt-[78px]'>
 			<CategoryHero id={id} />
 			<div className='container my-[57px]'>
 				<Search />
