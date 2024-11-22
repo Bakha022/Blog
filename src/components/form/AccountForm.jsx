@@ -53,10 +53,6 @@ const AccountForm = () => {
 		getData()
 	}, [reset, btnLoading])
 
-	// if (loading) {
-	// 	return <Loading widht='full' size={'12px'} height='screen' />
-	// }
-
 	return (
 		<div className='container'>
 			<div className='pt-[124px] md:pt-[132px]'>

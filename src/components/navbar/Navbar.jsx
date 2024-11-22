@@ -33,6 +33,7 @@ const Navbar = () => {
 					<div className='logo'>
 						{user && user.role === 'user' ? (
 							<Link
+								onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 								to={'/myblogs'}
 								className='font-normal text-sen text-[#FFD050] text-2xl leading-7 hover:text-gray-400'
 							>
@@ -84,7 +85,7 @@ const Navbar = () => {
 								Blog
 							</Link>
 						</li>
-						
+
 						<li>
 							<Link
 								onClick={handleLinkClick}
