@@ -10,7 +10,7 @@ const UserLayout = () => {
 				<Navbar />
 			</header>
 
-			<main>
+			<main className='grid'>
 				<Outlet />
 			</main>
 
